@@ -13,9 +13,6 @@ const CourseRouter=express.Router()
     }
 })
 
-
-
-
     CourseRouter.get("/Course",(req,res)=>{
     try{
         res.json({
