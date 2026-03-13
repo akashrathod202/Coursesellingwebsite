@@ -20,7 +20,7 @@ const userSchema=new mongoose.Schema({
     password:{
         type:String,
         required:true
-    },
+    }, 
 
     cretedAt:{
         type:Date,
@@ -29,4 +29,4 @@ const userSchema=new mongoose.Schema({
 
 })
 
-module.exports=mongoose.module("user",userSchema)
+module.exports=mongoose.module("User",userSchema)
