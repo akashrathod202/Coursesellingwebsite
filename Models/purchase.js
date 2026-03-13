@@ -15,12 +15,12 @@ const PurchaseSchema = new mongoose.Schema({
         ref:"Course",
     },
 
-    PurchasedAt:{
+    PurchasedAt  :{
         type:Date,
         default:Date.now
     },
 
-    ampount:{
+    amount:{
         type:Number,
         required:true
     },
