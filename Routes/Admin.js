@@ -2,6 +2,7 @@ const{Router} = require("express")
 const adminRouter =Router()
 
 
+
 adminRouter.post('/signup',(req,res)=>{
     try{   
          res.json({
@@ -29,9 +30,6 @@ res.json({
     }
 })
 
-
-
-
 adminRouter.post('/course',(req,res)=>{
     try{
           res.json({
@@ -44,8 +42,6 @@ adminRouter.post('/course',(req,res)=>{
     }
       })
 
-
-
 adminRouter.post('/course',(req,res)=>{
     try{
           res.json({
@@ -57,7 +53,6 @@ adminRouter.post('/course',(req,res)=>{
            console.log(error)
     }
       })
-
 
 adminRouter.put('/course',(req,res)=>{
         try{
@@ -70,7 +65,6 @@ adminRouter.put('/course',(req,res)=>{
                console.log(error)
         }
           })
-
 
 adminRouter.put('/course/bulk',(req,res)=>{
             try{

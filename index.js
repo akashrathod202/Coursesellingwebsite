@@ -7,7 +7,7 @@ const app = express()
 const connectDB = require('./config/db')
 const mongoose = require("mongoose")
 
-
+app.use(express.json())
 
 
 app.use('/admin', adminRouter)
@@ -15,7 +15,7 @@ app.use('/user', userrouter)
 app.use('/course', CourseRouter)
 
 connectDB()
-app.use(express.json())
+ 
 
 
  
@@ -27,6 +27,22 @@ app.listen(PORT, () => {
 
 
 
+
+
+// this code test your db 
+
+
+// const Test = mongoose.model("Test", {
+//     name: String
+//   })
+  
+//   async function testDB() {
+//     const data = new Test({ name: "Akash" })
+//     await data.save()
+//     console.log("Data inserted")
+//   }
+  
+//   testDB()
 
 
 

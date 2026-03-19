@@ -1,6 +1,6 @@
 const mongoose=require('mongoose')
 
-const CoureseSchema=({
+const CoureseSchema= new mongoose.Schema({
   
     title:{
         type:String,
