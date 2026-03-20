@@ -27,7 +27,7 @@ userrouter.post("/signup",async(req,res)=>{
 
         const hashedPassword=await bcrypt.hash(password,10)
 
-        const User =await User.create({
+        const newUser =await User.create({
             firstname,
             lastname,
             email,
@@ -62,13 +62,9 @@ userrouter.post("/signin",async(req,res)=>{
         
 
         
-       const token =jwt.sign(
-        {id:user._id,role:"user"},
-        process.env.JWT_SECRET,
-        {
-            expiresIn:"7d"
-        }
-       )
+        const token = jwt.sign({ id: user._id }, process.env.JWT_USER_SECRET, {
+            expiresIn: '7d'
+        });
 
        res.status(200).json({
 
@@ -85,7 +81,7 @@ userrouter.post("/signin",async(req,res)=>{
 
 
 
-userrouter.post("/Purchases ",(req,res)=>{
+userrouter.post("/Purchases",(req,res)=>{
     try{
         res.json({
             message: "sigin endpoint"

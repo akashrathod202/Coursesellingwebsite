@@ -14,7 +14,7 @@ const userAuth = (req, res, next) => {
         }
 
         // Step 3: Verify token
-        const decoded = jwt.verify(token, process.env.JWT_SECRET)
+        const decoded = jwt.verify(token, process.env.JWT_USER_SECRET)
         // if token is valid, decoded = { id: "userId", role: "user" }
         // if token is invalid/expired, it throws an error → goes to catch block
 
@@ -39,7 +39,7 @@ const adminAuth = (req, res, next) => {
             return res.status(401).json({ message: "No token, access denied" })
         }
 
-        const decoded = jwt.verify(token, process.env.JWT_SECRET)
+        const decoded = jwt.verify(token, process.env.JWT_ADMIN_SECRET,)
 
         // Extra check — only allow admins
         if (decoded.role !== "admin") {
