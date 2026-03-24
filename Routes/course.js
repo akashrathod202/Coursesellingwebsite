@@ -5,7 +5,7 @@ const CourseRouter=express.Router()
     CourseRouter.post("/Purchase ",(req,res)=>{
     try{
         res.json({
-            message: "sigin endpoint"
+            message: "sigiint"
         })
     }
     catch(error){
